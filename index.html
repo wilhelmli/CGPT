@@ -13,7 +13,7 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
 #right {  color:#f0f0f0; float:right; width:40%; height:calc(100vh - 100px); background: #121212 } 
 #left, #prompt, #list { border:1px solid grey; padding:6px; overflow:auto; background: #121212 }
 #list li:hover { color:#f0f0f0; background:#00a000 }
-#menu button:hover { color:#f0f0f0; font-family: Roboto,Lato,Arial; font-size:16px; border-radius:3px; border:1px solid #ff0000; padding:3px 6px; background: #121212 }
+#menu button:hover { color:#f0f0f0; font-family: Roboto,Lato,Arial; font-size:16px; border-radius:3px; border:1px solid grey; padding:3px 6px; background: #121212 }
 #right textarea { display:block; width:96%; margin:3px auto; background:#eee }
 .prompt { color:#f0f0f0; background:#00a000; padding:6px }
 
@@ -80,10 +80,10 @@ a:active {
   </div>
   
   <div id="menu" style="float:right;">
-    <button onclick="chat.recognition()" title="Voice input"><img src="https://i.pinimg.com/originals/93/2f/d0/932fd00d9b43753061c47739f0cc777b.gif" style="height: 2rem"></button>&nbsp;&nbsp;&nbsp;
+    <button onclick="chat.recognition()" title="Voice input"><img src="https://i.pinimg.com/originals/93/2f/d0/932fd00d9b43753061c47739f0cc777b.gif" style="height: 2rem"></button>&nbsp;&nbsp;
     <button onclick="chat.logout()" title="Remove API key">Logout</button> 
     <button onclick="chat.export()" title="Export conversation">Export</button>
-    <button class="desktop" onclick="chat.showPrompts()" title="Show prompts">Prompts</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button class="desktop" onclick="chat.showPrompts()" title="Show prompts">Prompts</button>&nbsp;&nbsp;
     <button id="btnSend" accesskey=s onclick="chat.submit()" title="[Alt-S] Submit prompt"><b>Send</b>
     <span id="falcon">
       <a><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEVAygOW4HdEvwQ8zQA9ywRBygBw60gpAAABAUlEQVR4nO3PARGAMAwAsQKdf8vo+F3iIPO8387ZPXMrwz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+w7wfv64YnTVjj7gAAAAASUVORK5CYII=" alt="Send button" style="height: 8px" >
