@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <!-- saved from url=(0046)https://pingshan-tech.com/demo/ps-chatgpt.html -->
-<html><link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<html>
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>CGPT | HALT CREATION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
 <style>
 body  { font-family: Roboto,Lato,Arial; line-height:1.5; font-size:16px; margin:0; padding:0; overflow:hidden; }
@@ -22,7 +23,7 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
 .markdown pre button { display:none; float:right; margin:4px }
 .markdown blockquote { background:#f0f0f0; border-left:6px solid grey; padding:8px }
 .markdown table { margin:12px; border-collapse: collapse; }
-.markdown th    { border:1px solid grey; background:lightgrey; padding:6px; } 
+.markdown th    { border:1px solid grey; background:light grey; padding:6px; } 
 .markdown td    { border:1px solid grey;  padding:6px; }
 .markdown tr:nth-child(even) {  background:#f0f0f0;  }
 
@@ -36,7 +37,7 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
   #list, .desktop { display:none!important }
   #right { position:absolute; width:auto; height:auto; bottom:10px; left:8px; right:70px }
   #right textarea { height:1.2em; padding:10px; overflow:auto }
-  #btnSend { position:absolute; height:36px; bottom:12px; right:12px; }
+  #btnSend { background:#00a000; color:#f0f0f0; position:absolute; height:36px; bottom:12px; right:12px; }
   #left	 { width:97%; height:calc(100vh - 154px);  }
 }
 </style><style></style><style type="text/css" id="faf39320-1846-4a25-bc7c-0cffeca6c6e6">.b96268f3-a198-4521-8c3d-e6a61bafb487 { position: relative !important; border-radius: 0.2em !important; padding: 0px !important; margin: 0px !important; }
@@ -77,24 +78,28 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
 
 
 <body><header>
-  <div id="heading" style="float:left">CGPT<br>
-    <span id="message" style="color:yellow;font-size:10px">
-        <a href="https://github.com/casualwriter/vanilla-chatgpt" target="_NEW">github</a> @20230417
+  <div id="heading" style="float:left; top: 2; left: 2; z-index: 0;">
+    <span id="falcon">
+      <a>
+        <img src="https://show.halt.dev/assets/images/asset-18.png" alt="Website Falcon" style="height: 3rem;">
+      </a>
     </span>
+
   </div>
+  
   <div id="menu" style="float:right;">
     <button onclick="chat.recognition()" title="voice input">🎤</button>
     <button onclick="chat.logout()" title="remove API key">Logout</button> 
     <button onclick="chat.export()" title="export conversation">Export</button>
     <button class="desktop" onclick="chat.showPrompts()" title="show prompts">Prompts</button>&nbsp;
-    <button id="btnSend" accesskey="s" onclick="chat.submit()" title="[Alt-S] submit prompt"><b>S</b>end</button>
+    <button id="btnSend" accesskey="s" onclick="chat.submit()" title="[Alt-S] submit prompt"><b>Send</b></button>
   </div>
 </header>
 
 <div id="content" style="margin:8px;color:#112;background:bed">
   <div id="right">
      <textarea id="prompt" rows="3" placeholder="please input prompt here.."></textarea>
-     <div id="list" style="height:calc(100vh - 163px)">
+     <div id="list" style="height:calc(100vh - 140px)">
         <b>Samples of prompt</b>
         <ul>
           <li>A quote of today
@@ -110,7 +115,7 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
   </div>
   <div id="left">
     <div id="main" style="padding:12px; max-width:960px">
-       <h3>Welcome to CGPT, based on CausulWriter's vanilla-chatgpt demo.</h3>
+       <h3>Welcome to CGPT, based on CasualWriter's vanilla-chatgpt demo.</h3>
        <p class="desktop">Please submit prompt by pressing 
        <label><input type="radio" name="submitkey" onclick="chat.hotkey=&#39;enter&#39;" checked="">[Enter]</label>
        <label><input type="radio" name="submitkey" onclick="chat.hotkey=&#39;ctrl&#39;">[Ctrl-Enter]</label>
@@ -366,7 +371,7 @@ chat.oncomplete = (text) => {
   chat("main").innerHTML = md.html(html1) + '<br></div>'
   chat("list").innerHTML = html2
   chat("left").scrollTop = chat("left").scrollHeight;
-  chat("btnSend").innerHTML = '<b>S</b>end'
+  chat("btnSend").innerHTML = '<b>Send</b>end'
   
   if (document.body.clientWidth > 800) {
     chat('prompt').select()
