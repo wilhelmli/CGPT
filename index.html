@@ -6,25 +6,49 @@
 </head>
   
 <style>
-body  { font-family: Roboto,Lato,Arial; line-height:1.5; font-size:16px; margin:0; padding:0; overflow:hidden; }
-header { background: #000; }
+body  { font-family: Roboto,Lato,Arial; line-height:1.5; font-size:16px; margin:0; padding:0; overflow:hidden; background:#121212 }
+header { background: #121212 }
 header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Open Sans" }
-#left  { float:left;  width:calc(60vw - 30px); height:calc(100vh - 100px); }
-#right { float:right; width:40%; height:calc(100vh - 100px); } 
-#left, #prompt, #list { border:1px solid grey; padding:6px; overflow:auto }
-#list li:hover  { background:#ddd }
-#menu button    { font-family:Lato,arial; border-radius:3px; border:none; padding:3px 6px}
-#right textarea { display:block; width:96%; margin:3px auto; background:#eee}
-.prompt { color:#322; background:#ccc; padding:6px; }
+#left  {  color:#f0f0f0; float:left;  width:calc(60vw - 30px); height:calc(100vh - 100px); background:#121212 }
+#right {  color:#f0f0f0; float:right; width:40%; height:calc(100vh - 100px); background: #121212 } 
+#left, #prompt, #list { border:1px solid grey; padding:6px; overflow:auto; background: #121212 }
+#list li:hover { color:#f0f0f0; background:#00a000 }
+#menu button:hover { color:#f0f0f0; font-family: Roboto,Lato,Arial; font-size:16px; border-radius:3px; border:1px solid #ff0000; padding:3px 6px; background: #121212 }
+#right textarea { display:block; width:96%; margin:3px auto; background:#eee }
+.prompt { color:#f0f0f0; background:#00a000; padding:6px }
 
-.markdown code { background:#f0f0f0; color:navy; border-radius:6px; padding:2px; } 
-.markdown pre  { background:#f0f0f0; margin:16px; border:1px solid #ddd; padding:8px; border-radius: 6px;  } 
-.markdown pre:hover button { display:block; }
+a:link {
+  color: green;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: pink;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: yellow;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.markdown code { background:#f0f0f0; color:#00a000; border-radius:6px; padding:2px } 
+.markdown pre  { background:#f0f0f0; margin:16px; border:1px solid #ddd; padding:8px; border-radius: 6px  } 
+.markdown pre:hover button { display:block }
 .markdown pre button { display:none; float:right; margin:4px }
 .markdown blockquote { background:#f0f0f0; border-left:6px solid grey; padding:8px }
 .markdown table { margin:12px; border-collapse: collapse; }
-.markdown th    { border:1px solid grey; background:light grey; padding:6px; } 
-.markdown td    { border:1px solid grey;  padding:6px; }
+.markdown th    { border:1px solid grey; background:light grey; padding:6px } 
+.markdown td    { border:1px solid grey;  padding:6px }
 .markdown tr:nth-child(even) {  background:#f0f0f0;  }
 
 @media print{
@@ -37,30 +61,35 @@ header { color:#eee; padding:12px; font-size:20px; height:45px; font-family:"Ope
   #list, .desktop { display:none!important }
   #right { position:absolute; width:auto; height:auto; bottom:10px; left:8px; right:70px }
   #right textarea { height:1.2em; padding:10px; overflow:auto }
-  #btnSend { background:#00a000; color:#f0f0f0; position:absolute; height:36px; bottom:12px; right:12px; }
-  #left	 { width:97%; height:calc(100vh - 154px);  }
+  #btnSend { background:#00a000; color:#f0f0f0; position:absolute; height:36px; bottom:12px; right:12px }
+  #left	 { width:97%; height:calc(100vh - 154px)  }
 }
 </style>
 
 <header>
-  <div id="heading" style="float:left; top: 2; left: 2; z-index: 0;">
+  <div id="heading" style="float:left; top: 2; left: 2; z-index: 0" >
     <span id="falcon">
-      <a><img src="https://show.halt.dev/assets/images/asset-18.png" alt="Website Falcon" style="height: 3rem;">
+      <a><img src="https://show.halt.dev/assets/images/asset-18.png" alt="Website Falcon" style="height: 3rem" >
       </a>
     </span>
     
 <span id=message style="color:#00a000;font-size:10px">
-        <a href="https://github.com/casualwriter/vanilla-chatgpt" target=_NEW>github</a> @2023041
+        <a href="https://github.com/casualwriter/vanilla-chatgpt" target=_NEW>Github</a> @20230417
     </span>
     
   </div>
   
   <div id="menu" style="float:right;">
-    <button onclick="chat.recognition()" title="voice input">🎤</button>
-    <button onclick="chat.logout()" title="remove API key">Logout</button> 
-    <button onclick="chat.export()" title="export conversation">Export</button>
-    <button class="desktop" onclick="chat.showPrompts()" title="show prompts">Prompts</button>&nbsp;
-    <button id="btnSend" accesskey=s onclick="chat.submit()" title="[Alt-S] submit prompt"><b>Send</b></button>
+    <button onclick="chat.recognition()" title="Voice input"><img src="https://i.pinimg.com/originals/93/2f/d0/932fd00d9b43753061c47739f0cc777b.gif" style="height: 2rem"></button>&nbsp;&nbsp;&nbsp;
+    <button onclick="chat.logout()" title="Remove API key">Logout</button> 
+    <button onclick="chat.export()" title="Export conversation">Export</button>
+    <button class="desktop" onclick="chat.showPrompts()" title="Show prompts">Prompts</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button id="btnSend" accesskey=s onclick="chat.submit()" title="[Alt-S] Submit prompt"><b>Send</b>
+    <span id="falcon">
+      <a><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAElBMVEVAygOW4HdEvwQ8zQA9ywRBygBw60gpAAABAUlEQVR4nO3PARGAMAwAsQKdf8vo+F3iIPO8387ZPXMrwz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+wz7DPsM+w7wfv64YnTVjj7gAAAAASUVORK5CYII=" alt="Send button" style="height: 8px" >
+      </a>
+    </span>
+    </button>
   </div>
 </header>
 
@@ -334,12 +363,12 @@ chat.oncomplete = (text) => {
   }
   
   html1 += '<div><button style="float:left" onclick="chat.redo()">Redo</button>'
-  html1 += '<button style="float:right" onclick="chat.speak()">🔊 speak</button>'
+  html1 += '<button style="float:right" onclick="chat.speak()">🔊 Speak</button>'
   
   chat("main").innerHTML = md.html(html1) + '<br></div>'
   chat("list").innerHTML = html2
   chat("left").scrollTop = chat("left").scrollHeight;
-  chat("btnSend").innerHTML = '<b>Send</b>end'
+  chat("btnSend").innerHTML = '<b>Send</b>'
   
   if (document.body.clientWidth > 800) {
     chat('prompt').select()
