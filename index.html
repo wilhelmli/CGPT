@@ -450,7 +450,7 @@ chat.speak = (i)  => {
   } else {
     i = ( i>=0? i : chat.history.length-1 )
     const utterance = new SpeechSynthesisUtterance(chat.history[i].result);
-    utterance.rate = 1.5;
+    utterance.rate = 1.0;
     window.speechSynthesis.speak(utterance);
   }
 }
